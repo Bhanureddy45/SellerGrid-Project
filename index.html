@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Review Dashboard</title>
+
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  background: #f5f6fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 25px;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-item {
+  padding: 12px;
+  border: 1px dashed #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  border: 2px solid #000;
+  font-weight: bold;
+}
+
+/* Main Layout */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  padding: 15px;
+  border: 1px dashed #ccc;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  text-align: center;
+}
+
+/* Sentiment badges */
+.badge {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.badge.positive {
+  border: 1px dashed green;
+}
+
+.badge.neutral {
+  border: 1px dashed orange;
+}
+
+.badge.negative {
+  border: 1px dashed red;
+}
+
+/* Table */
+.table-container {
+  background: #fff;
+  padding: 20px;
+  border: 1px dashed #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px dashed #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #f1f1f1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <h2>ReviewPro</h2>
+  <ul class="nav-list">
+    <li class="nav-item active">Dashboard</li>
+    <li class="nav-item">Reviews</li>
+    <li class="nav-item">Analytics</li>
+    <li class="nav-item">Alerts</li>
+    <li class="nav-item">Settings</li>
+  </ul>
+</aside>
+
+<!-- Main Content -->
+<main class="main">
+
+  <!-- Header -->
+  <header class="header">
+    Search | Filters | Profile
+  </header>
+
+  <!-- Summary Cards -->
+  <section class="cards">
+    <div class="card">Total Reviews</div>
+    <div class="card">Avg Rating</div>
+    <div class="card">🟢 Positive</div>
+    <div class="card">🟡 Neutral</div>
+    <div class="card">🔴 Negative</div>
+    <div class="card">Pending Replies</div>
+  </section>
+
+  <!-- Reviews Table -->
+  <section class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Product</th>
+          <th>Rating</th>
+          <th>Review</th>
+          <th>Sentiment</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Amazon</td>
+          <td>Wireless Earbuds</td>
+          <td>⭐⭐⭐⭐</td>
+          <td>Great sound quality...</td>
+          <td><span class="badge positive">Positive</span></td>
+          <td>Mar 30</td>
+          <td>Pending</td>
+          <td>Reply</td>
+        </tr>
+
+        <tr>
+          <td>Flipkart</td>
+          <td>Smart Watch</td>
+          <td>⭐⭐⭐</td>
+          <td>Average performance...</td>
+          <td><span class="badge neutral">Neutral</span></td>
+          <td>Mar 29</td>
+          <td>Pending</td>
+          <td>Reply</td>
+        </tr>
+
+        <tr>
+          <td>Shopify</td>
+          <td>Bluetooth Speaker</td>
+          <td>⭐⭐</td>
+          <td>Battery drains fast...</td>
+          <td><span class="badge negative">Negative</span></td>
+          <td>Mar 28</td>
+          <td>Replied</td>
+          <td>View</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+</body>
+</html>
